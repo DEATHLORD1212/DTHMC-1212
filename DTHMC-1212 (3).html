@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DTHMC.1212 | Minecraft Server</title>
+<style>
+:root{--bg:#080d1b;--panel:#111a2e;--line:#263650;--txt:#f4f7ff;--muted:#aab7cc;--blue:#35a7ff;--orange:#ff9b35;--green:#39d98a;--purple:#ad79ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 5%,#172d55 0,transparent 32%),radial-gradient(circle at 90% 20%,#39204e 0,transparent 30%),var(--bg);color:var(--txt);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+.wrap{width:min(1050px,92%);margin:auto}.hero{text-align:center;padding:55px 12px 35px}.logo{font-size:clamp(38px,8vw,68px);font-weight:900;letter-spacing:1px;background:linear-gradient(90deg,var(--blue),var(--orange),var(--green),var(--purple));color:transparent;background-clip:text}.hero p{color:var(--muted);margin:5px 0 20px}.pill{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:5px 15px;color:var(--green);background:#0c1b24}
+nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:15px 0 30px}nav a{color:var(--txt);text-decoration:none;background:#17243b;border:1px solid var(--line);padding:8px 16px;border-radius:12px}
+section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,55,.96),rgba(13,20,37,.96));border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 35px #0004}h2{margin:0 0 15px;font-size:25px}h2 span{color:var(--orange)}
+.server{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.stat{padding:15px;border-radius:14px;background:#0b1426;border:1px solid var(--line)}.stat small{display:block;color:var(--muted)}.stat strong{font-size:18px;overflow-wrap:anywhere}.status{color:var(--orange)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}.rank{padding:18px;border-radius:16px;background:#0b1426;border:1px solid var(--line);text-align:center}.rank:nth-child(4n+1){border-top:3px solid var(--blue)}.rank:nth-child(4n+2){border-top:3px solid var(--orange)}.rank:nth-child(4n+3){border-top:3px solid var(--green)}.rank:nth-child(4n){border-top:3px solid var(--purple)}.rank h3{font-size:22px;margin:3px}.price{font-size:23px;font-weight:bold;color:var(--green);margin:8px}.btn{border:0;border-radius:11px;padding:10px 16px;background:linear-gradient(90deg,var(--blue),var(--purple));color:white;font-weight:bold;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block}.note{color:var(--muted);font-size:14px}.rules{padding:0;list-style:none;display:grid;gap:9px}.rules li{background:#0b1426;border:1px solid var(--line);padding:10px 13px;border-radius:11px}.punish{color:var(--orange);font-weight:bold}.footer{text-align:center;color:var(--muted);padding:25px}
+@media(max-width:520px){section{padding:17px}.hero{padding-top:35px}}
+</style>
+</head>
+<body>
+<header class="hero wrap">
+  <div class="logo">DTHMC.1212</div>
+  <p>به سرور ماینکرفت ما خوش آمدید!</p>
+  <span class="pill">Minecraft Bedrock Edition</span>
+  <nav><a href="#server">وضعیت سرور</a><a href="#ranks">فروشگاه رنک</a><a href="#rules">قوانین</a></nav>
+</header>
+<main class="wrap">
+<section id="server">
+  <h2><span>●</span> وضعیت سرور</h2>
+  <div class="server">
+    <div class="stat"><small>آدرس سرور</small><strong id="ip">DTHmc-6.aternos.me</strong></div>
+    <div class="stat"><small>پورت</small><strong id="port">28017</strong></div>
+    <div class="stat"><small>وضعیت</small><strong class="status" id="status">در حال بررسی...</strong></div>
+    <div class="stat"><small>بازیکنان آنلاین</small><strong id="players">—</strong></div>
+  </div>
+  <p class="note">وضعیت هر ۳۰ ثانیه بررسی می‌شود. اگر سرور خاموش یا در دسترس نباشد، ممکن است اطلاعات نمایش داده نشود.</p>
+  <button class="btn" onclick="copyServer()">کپی آدرس سرور</button>
+</section>
+<section id="ranks">
+  <h2><span>✦</span> فروشگاه رنک‌ها</h2>
+  <div class="grid" id="rankGrid"></div>
+  <p class="note">برای هماهنگی خرید، پیام آماده را کپی کنید و از طریق روبیکا با مدیریت ارتباط بگیرید. پرداخت فقط پس از تأیید مدیریت انجام شود.</p>
+  <a class="btn" href="https://rubika.ir/MR_GOJO0" target="_blank" rel="noopener">ارتباط با مدیریت در روبیکا</a>
+</section>
+<section id="rules">
+  <h2><span>⚑</span> قوانین سرور</h2>
+  <ul class="rules">
+    <li>تبلیغ در سرور <span class="punish">⟵ ۱ روز بن</span></li>
+    <li>خرید و فروش با پول واقعی <span class="punish">⟵ ۳ روز بن</span></li>
+    <li>استفاده از هرگونه چیت <span class="punish">⟵ ۵ روز بن</span></li>
+    <li>فحاشی در سرور <span class="punish">⟵ ۱ روز میوت</span></li>
+    <li>استفاده از اسکین ۴ بعدی <span class="punish">⟵ ۳ روز بن</span></li>
+    <li>اسم نامناسب یا تبلیغاتی <span class="punish">⟵ ۲ روز بن</span></li>
+    <li>دزدی در سرور <span class="punish">⟵ ۵ روز بن + کلیر آیتم</span></li>
+    <li>کیل‌فارم در سرور <span class="punish">⟵ ۱ روز بن</span></li>
+    <li>تیپی‌کیل (TP Kill) <span class="punish">⟵ ۱ روز بن</span></li>
+    <li>سوءاستفاده از باگ <span class="punish">⟵ ۲۰ روز بن + کلیر آیتم + کلیر پول</span></li>
+    <li>سوءاستفاده از رنک <span class="punish">⟵ رنک‌دان + بن دائم</span></li>
+    <li>مزاحمت استف‌ها در مقابل بازیکنان <span class="punish">⟵ ۳ روز بن</span></li>
+    <li>مولتی اکانت (Multi Account) <span class="punish">⟵ ۵ روز بن</span></li>
+  </ul>
+</section>
+</main>
+<footer class="footer">© DTHMC.1212 — همه حقوق محفوظ است.</footer>
+<script>
+const ranks=[["VIP","۵۵ تومان"],["VIP+","۱۱۰ تومان"],["MVP","۱۶۰ تومان"],["MVP+","۲۴۰ تومان"],["CVIP","۳۴۰ تومان"],["CVIP+","۵۰۰ تومان"]];
+document.getElementById("rankGrid").innerHTML=ranks.map(([name,price])=>`<article class="rank"><h3>${name}</h3><div class="price">${price}</div><button class="btn" onclick="requestRank('${name}','${price}')">درخواست خرید</button></article>`).join("");
+function requestRank(name,price){const msg=`سلام، برای خرید رنک ${name} به قیمت ${price} در سرور DTHMC.1212 پیام می‌دهم. لطفاً راهنمایی کنید.`;navigator.clipboard?.writeText(msg).then(()=>alert("متن درخواست کپی شد. حالا از دکمه روبیکا با مدیریت هماهنگ کنید.")).catch(()=>alert(msg));}
+function copyServer(){const s="DTHmc-6.aternos.me:28017";navigator.clipboard?.writeText(s).then(()=>alert("آدرس سرور کپی شد: "+s)).catch(()=>alert(s));}
+async function updateStatus(){const status=document.getElementById("status"),players=document.getElementById("players");try{const r=await fetch("https://api.mcsrvstat.us/bedrock/3/DTHmc-6.aternos.me:28017");if(!r.ok)throw 0;const d=await r.json();if(d.online){status.textContent="آنلاین";status.style.color="#39d98a";players.textContent=(d.players?.online??0)+" / "+(d.players?.max??"?");}else{status.textContent="آفلاین یا در دسترس نیست";status.style.color="#ff9b35";players.textContent="۰";}}catch(e){status.textContent="نامشخص";players.textContent="—";}}
+updateStatus();setInterval(updateStatus,30000);
+</script>
+</body>
+</html>
