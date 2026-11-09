@@ -62,7 +62,14 @@ section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,
 <footer class="footer">© DTHMC.1212 — همه حقوق محفوظ است.</footer>
 <script>
 const ranks=[["VIP","۵۵ تومان"],["VIP+","۱۱۰ تومان"],["MVP","۱۶۰ تومان"],["MVP+","۲۴۰ تومان"],["CVIP","۳۴۰ تومان"],["CVIP+","۵۰۰ تومان"]];
-function requestRank(name,price){
+  document.getElementById("rankGrid").innerHTML = ranks.map(([name,price]) => `
+<article class="rank">
+<h3>${name}</h3>
+<div class="price">${price}</div>
+<button class="btn" onclick="requestRank('${name}','${price}')">خرید رنک</button>
+</article>
+`).join("");
+
   window.open("https://rubika.ir/Real_wordhl","_blank");
 }
 function requestRank(name,price){
