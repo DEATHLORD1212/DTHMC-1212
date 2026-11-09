@@ -61,19 +61,28 @@ section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,
 </main>
 <footer class="footer">© DTHMC.1212 — همه حقوق محفوظ است.</footer>
 <script>
-const ranks=[["VIP","۵۵ تومان"],["VIP+","۱۱۰ تومان"],["MVP","۱۶۰ تومان"],["MVP+","۲۴۰ تومان"],["CVIP","۳۴۰ تومان"],["CVIP+","۵۰۰ تومان"]];
-  document.getElementById("rankGrid").innerHTML = ranks.map(([name,price]) => `
-<article class="rank">
-<h3>${name}</h3>
-<div class="price">${price}</div>
-<button class="btn" onclick="requestRank('${name}','${price}')">خرید رنک</button>
-</article>
+const ranks = [
+  ["VIP", "۵۵ تومان"],
+  ["VIP+", "۱۱۰ تومان"],
+  ["MVP", "۱۶۰ تومان"],
+  ["MVP+", "۲۲۰ تومان"],
+  ["CVIP", "۳۳۰ تومان"],
+  ["CVIP+", "۵۵۰ تومان"]
+];
+
+document.getElementById("rankGrid").innerHTML =
+ranks.map(([name, price]) => `
+  <article class="rank">
+    <h3>${name}</h3>
+    <div class="price">${price}</div>
+    <button class="btn" onclick="requestRank('${name}','${price}')">
+      خرید رنک
+    </button>
+  </article>
 `).join("");
 
-  window.open("https://rubika.ir/Real_wordhl","_blank");
-}
-function requestRank(name,price){
-window.open("https://rubika.ir/Real_wordhl","_blank");
+function requestRank(name, price) {
+  window.open("https://rubika.ir/Real_wordhl", "_blank");
 }
 function copyServer(){const s="DTHmc-6.aternos.me:28017";navigator.clipboard?.writeText(s).then(()=>alert("آدرس سرور کپی شد: "+s)).catch(()=>alert(s));}
 async function updateStatus(){const status=document.getElementById("status"),players=document.getElementById("players");try{const r=await fetch("https://api.mcsrvstat.us/bedrock/3/DTHmc-6.aternos.me:28017");if(!r.ok)throw 0;const d=await r.json();if(d.online){status.textContent="آنلاین";status.style.color="#39d98a";players.textContent=(d.players?.online??0)+" / "+(d.players?.max??"?");}else{status.textContent="آفلاین یا در دسترس نیست";status.style.color="#ff9b35";players.textContent="۰";}}catch(e){status.textContent="نامشخص";players.textContent="—";}}
