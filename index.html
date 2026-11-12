@@ -17,7 +17,7 @@ section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,
 </head>
 <body>
 <header class="hero wrap">
-  <div class="logo">DTHMC.1212</div>
+  <div class="logo">CFZ SMP</div>
   <p>به سرور ماینکرفت ما خوش آمدید!</p>
   <span class="pill">Minecraft Bedrock Edition</span>
   <nav><a href="#server">وضعیت سرور</a><a href="#ranks">فروشگاه رنک</a><a href="#rules">قوانین</a></nav>
@@ -26,8 +26,8 @@ section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,
 <section id="server">
   <h2><span>●</span> وضعیت سرور</h2>
   <div class="server">
-    <div class="stat"><small>آدرس سرور</small><strong id="ip">DTHmc-6.aternos.me</strong></div>
-    <div class="stat"><small>پورت</small><strong id="port">28017</strong></div>
+    <div class="stat"><small>آدرس سرور</small><strong id="ip">CFZSMP-cF.aternos.me/strong></div>
+    <div class="stat"><small>پورت</small><strong id="port">24202</strong></div>
     <div class="stat"><small>وضعیت</small><strong class="status" id="status">در حال بررسی...</strong></div>
     <div class="stat"><small>بازیکنان آنلاین</small><strong id="players">—</strong></div>
   </div>
@@ -59,7 +59,7 @@ section{margin:24px 0;padding:24px;background:linear-gradient(145deg,rgba(20,32,
   </ul>
 </section>
 </main>
-<footer class="footer">© DTHMC.1212 — همه حقوق محفوظ است.</footer>
+<footer class="footer">© CFZ SMP — همه حقوق محفوظ است.</footer>
 <script>
 const ranks = [
   ["VIP", "۵۵ تومان"],
@@ -89,7 +89,7 @@ ranks.map(([name, price]) => `
 function requestRank(name, price) {
   window.open("https://rubika.ir/Real_wordhl", "_blank");
 }
-function copyServer(){const s="DTHmc-6.aternos.me:28017";navigator.clipboard?.writeText(s).then(()=>alert("آدرس سرور کپی شد: "+s)).catch(()=>alert(s));}
+function copyServer(){const s="CFZSMP-cF.aternos.me:24202";navigator.clipboard?.writeText(s).then(()=>alert("آدرس سرور کپی شد: "+s)).catch(()=>alert(s));}
 async function updateStatus(){const status=document.getElementById("status"),players=document.getElementById("players");try{const r=await fetch("https://api.mcsrvstat.us/bedrock/3/DTHmc-6.aternos.me:28017");if(!r.ok)throw 0;const d=await r.json();if(d.online){status.textContent="آنلاین";status.style.color="#39d98a";players.textContent=(d.players?.online??0)+" / "+(d.players?.max??"?");}else{status.textContent="آفلاین یا در دسترس نیست";status.style.color="#ff9b35";players.textContent="۰";}}catch(e){status.textContent="نامشخص";players.textContent="—";}}
 updateStatus();setInterval(updateStatus,30000);
 </script>
